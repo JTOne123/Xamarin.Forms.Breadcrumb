@@ -62,7 +62,7 @@ Next up, just add the breadcrumb control onto that page and you're all set.
 You are able to change the first breadcrumb to an Icon, embedded image or url image.
 It implements the Xamarin.Forms ImageSource object.
 
-```csharp
+```xaml
 <breadcrumb:Breadcrumb Padding="15" VerticalOptions="Start">
     <breadcrumb:Breadcrumb.FirstBreadCrumb>
         <FontImageSource FontFamily="{StaticResource FontAwesome}"
@@ -78,7 +78,7 @@ You are able to change the separators to an Icon, embedded image or url image.
 It implements the Xamarin.Forms ImageSource object.
 
 Font - (FontAwesome)
-```csharp
+```xaml
 <breadcrumb:Breadcrumb Padding="15" VerticalOptions="Start">
     <breadcrumb:Breadcrumb.Separator>
         <FontImageSource FontFamily="{StaticResource FontAwesome}"
@@ -90,7 +90,7 @@ Font - (FontAwesome)
 ```
 
 Image - URL
-```csharp
+```xaml
 <breadcrumb:Breadcrumb Padding="15" VerticalOptions="Start">
     <breadcrumb:Breadcrumb.Separator>
         <UriImageSource Uri="https://cdn.iconscout.com/icon/free/png-256/xamarin-4-599473.png" />
@@ -99,7 +99,7 @@ Image - URL
 ```
 
 Image - Embedded
-```csharp
+```xaml
 <breadcrumb:Breadcrumb Padding="15" VerticalOptions="Start">
     <breadcrumb:Breadcrumb.Separator>
         <FileImageSource File="exampleImage.png" />
