@@ -56,6 +56,7 @@ Next up, just add the breadcrumb control onto that page and you're all set.
 | LastBreadcrumbBackgroundColor | Sets the background color of the last breadcrumbs |  A Color object. <br> Default value is **Transparent**. |
 | AnimationSpeed | Sets the speed of the animated breadcrumb | Default value is **800**. <br> Set to 0 to disable the animation. |
 | IsNavigationEnabled | Used to remove the tab gesture from breadcrumbs | Default value is **True**|
+| FixPostionFirstBreadcrumb | Used to fix the first breadcrumb position, so it doesn't move with the scrollview | Default value is **False**|
 
 ### First breadcrumb customization
 You are able to change the first breadcrumb to an Icon, embedded image or url image.
