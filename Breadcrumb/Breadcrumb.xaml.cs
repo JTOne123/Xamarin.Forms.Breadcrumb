@@ -108,6 +108,14 @@ namespace Breadcrumb
             set => SetValue(IsNavigationEnabledProperty, value);
         }
 
+        // FixPostionFirstBreadcrumb
+        public static readonly BindableProperty FixPostionFirstBreadcrumbProperty = BindableProperty.Create(nameof(FixPostionFirstBreadcrumb), typeof(bool), typeof(Breadcrumb), false);
+        public bool FixPostionFirstBreadcrumb
+        {
+            get => (bool)GetValue(FixPostionFirstBreadcrumbProperty);
+            set => SetValue(FixPostionFirstBreadcrumbProperty, value);
+        }
+
         #endregion Control properties
         public Breadcrumb()
         {
@@ -142,7 +150,14 @@ namespace Breadcrumb
                         }
 
                         // Add breadcrumb and separator to BreadCrumbContainer
-                        BreadCrumbContainer.Children.Add(breadCrumb1);
+                        if (FixPostionFirstBreadcrumb && page.Equals(pages.FirstOrDefault()))
+                        {
+                            StaticArea.Children.Add(breadCrumb1);
+                        }
+                        else
+                        {
+                            BreadCrumbContainer.Children.Add(breadCrumb1);
+                        }
                         BreadCrumbContainer.Children.Add(new Image
                         {
                             Source = Separator,

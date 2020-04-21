@@ -5,13 +5,21 @@
              x:Name="this"
              IsVisible="False">
     <ContentView.Content>
-        <ScrollView x:Name="BreadCrumbsScrollView"
-                    HorizontalScrollBarVisibility="{Binding ScrollBarVisibility, Source={x:Reference this}}"
-                    Orientation="Horizontal">
-            <StackLayout x:Name="BreadCrumbContainer"
-                         HorizontalOptions="FillAndExpand"
-                         Orientation="Horizontal"
-                         VerticalOptions="Center" />
-        </ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout x:Name="StaticArea" />
+            <ScrollView x:Name="BreadCrumbsScrollView"
+                        Grid.Column="1"
+                        HorizontalScrollBarVisibility="{Binding ScrollBarVisibility, Source={x:Reference this}}"
+                        Orientation="Horizontal">
+                <StackLayout x:Name="BreadCrumbContainer"
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             VerticalOptions="Center" />
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

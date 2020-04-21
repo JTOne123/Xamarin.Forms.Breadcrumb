@@ -12,13 +12,21 @@
 
             <!--  FontImageSource  -->
             <Label Text="Icon - FontAwesome" />
-            <breadcrumb:Breadcrumb Padding="15" VerticalOptions="Start">
+            <breadcrumb:Breadcrumb Padding="15"
+                                   FixPostionFirstBreadcrumb="True"
+                                   VerticalOptions="Start">
                 <breadcrumb:Breadcrumb.Separator>
                     <FontImageSource FontFamily="{StaticResource FontAwesome}"
                                      Glyph="{x:Static icons:IconFont.ChevronRight}"
                                      Size="15"
                                      Color="Red" />
                 </breadcrumb:Breadcrumb.Separator>
+                <breadcrumb:Breadcrumb.FirstBreadCrumb>
+                    <FontImageSource FontFamily="{StaticResource FontAwesome}"
+                                     Glyph="{x:Static icons:IconFont.Home}"
+                                     Size="15"
+                                     Color="Red" />
+                </breadcrumb:Breadcrumb.FirstBreadCrumb>
             </breadcrumb:Breadcrumb>
 
             <!--  UriImageSource  -->
