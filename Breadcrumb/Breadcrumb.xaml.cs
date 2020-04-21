@@ -119,6 +119,13 @@ namespace Breadcrumb
                 // Get list of all pages in the NavigationStack that has a selectedPage title
                 List<Page> pages = Navigation.NavigationStack.Select(x => x).Where(x => !string.IsNullOrEmpty(x?.Title)).ToList();
 
+                //! Fix - If the page opens twice (double click) the navigation stack is sometimes empty, a delay is needed to get the full stack
+                if (pages.Count == 0)
+                {
+                    await Task.Delay(100);
+                    pages = Navigation.NavigationStack.Select(x => x).Where(x => !string.IsNullOrEmpty(x?.Title)).ToList();
+                }
+
                 // If any pages, make the control visible
                 IsVisible = pages.Count > 0;
 
